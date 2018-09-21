@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <h1>Time for some Rock-Paper-Scissors game</h1>
+  <h2>Click the play button to run the game</h2>
+  <select id="select-box">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissor">Scissors</option>
+  </select>
+  <input type="submit" value="Play" id="button">
+  <div id="display-answer"></div>
+</body>
+
+<script src="src/js/rock-paper-scissors.js"></script>
+  <script>
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   let button = document.getElementById('button')
+    //   let displayDiv = document.getElementById('display_answer')
+    //   button.addEventListener('click', () => {
+    //     let value = document.getElementById('value').value
+    //     let rockPaperScissors = new RockPaperScissors
+    //     let result = rockPaperScissors.check(value)
+    //     displayDiv.innerHTML = result;
+    //   })
+    // })
+
+document.addEventListener('DOMContentLoaded', () => {
+      let button = document.getElementById('button')
+      button.addEventListener('click', () => {
+        playGame();
+      })
+    })
+
+  const playGame = () => {
+    let e = document.getElementById('select-box');
+    let userChoice = e.options[e.selectedIndex].value;
+    let displayDiv = document.getElementById('display_answer')
+
+  const computerChoice = getComputerChoice();
+    console.log(`You threw: ${userChoice}`);
+    console.log(`The computer threw: ${computerChoice}`);
+    console.log(determineWinner(userChoice, computerChoice));
+}
+
+  //playGame();
+  </script>
+
+</html>

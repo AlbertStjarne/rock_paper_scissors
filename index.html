@@ -7,49 +7,38 @@
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-  <h1>Time for some Rock-Paper-Scissors game</h1>
-  <h2>Click the play button to run the game</h2>
+  <h1>Have a minute to spend? Great, let's play some Rock-Paper-Scissors</h1>
+  <h2>Make your choice and click the play button to run the game</h2>
   <select id="select-box">
     <option value="rock">Rock</option>
     <option value="paper">Paper</option>
     <option value="scissor">Scissors</option>
   </select>
   <input type="submit" value="Play" id="button">
-  <div id="display-answer"></div>
+  <div id="display-answer">And the winner is...</div>
 </body>
 
 <script src="src/js/rock-paper-scissors.js"></script>
   <script>
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   let button = document.getElementById('button')
-    //   let displayDiv = document.getElementById('display_answer')
-    //   button.addEventListener('click', () => {
-    //     let value = document.getElementById('value').value
-    //     let rockPaperScissors = new RockPaperScissors
-    //     let result = rockPaperScissors.check(value)
-    //     displayDiv.innerHTML = result;
-    //   })
-    // })
-
-document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
       let button = document.getElementById('button')
       button.addEventListener('click', () => {
         playGame();
       })
     })
 
-  const playGame = () => {
-    let e = document.getElementById('select-box');
-    let userChoice = e.options[e.selectedIndex].value;
-    let displayDiv = document.getElementById('display_answer')
+    const playGame = () => {
+      let e = document.getElementById('select-box');
+      let userChoice = e.options[e.selectedIndex].value;
 
-  const computerChoice = getComputerChoice();
-    console.log(`You threw: ${userChoice}`);
-    console.log(`The computer threw: ${computerChoice}`);
-    console.log(determineWinner(userChoice, computerChoice));
-}
+    const computerChoice = getComputerChoice();
+    //  console.log(`You threw: ${userChoice}`);
+    //  console.log(`The computer threw: ${computerChoice}`);
+    //  console.log(determineWinner(userChoice, computerChoice));
 
-  //playGame();
+    let displayWinner = document.getElementById('display-answer');
+    let result = determineWinner(userChoice, computerChoice);
+    displayWinner = displayWinner.innerHTML = result;
+    }
   </script>
-
 </html>

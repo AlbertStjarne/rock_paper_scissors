@@ -1,8 +1,3 @@
-// function RockPaperScissors()  {
-//   this.check = (number) => {
-//       return number
-//   }
-// }
 
 const getUserChoice = userInput => {
   userInput = userInput.toLowerCase();
@@ -51,13 +46,3 @@ const determineWinner = (userChoice, computerChoice) => {
     }
   }
 }
-
-// const playGame = () => {
-//   const userChoice = getUserChoice('rock');
-//   const computerChoice = getComputerChoice();
-//   console.log(`You threw: ${userChoice}`);
-//   console.log(`The computer threw: ${computerChoice}`);
-//   console.log(determineWinner(userChoice, computerChoice));
-// }
-
-// playGame();

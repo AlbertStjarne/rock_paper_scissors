@@ -1,6 +1,6 @@
 const getUserChoice = userInput => {
   userInput = userInput.toLowerCase();
-  if(userInput === 'rock' || userInput === 'paper' || userInput === 'scissor') {
+  if(userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
     return userInput;
   } else {
     console.log('Invalid input');
@@ -15,7 +15,7 @@ const getComputerChoice = () => {
     case 1:
     return 'paper';
     case 2:
-    return 'scissor';
+    return 'scissors';
   };
 };
 
@@ -31,13 +31,13 @@ const determineWinner = (userChoice, computerChoice) => {
     }
   }
   if (userChoice === 'paper') {
-    if (computerChoice === 'scissor') {
+    if (computerChoice === 'scissors') {
       return 'Computer wins';
     } else {
       return 'You win!';
     }
   }
-  if (userChoice === 'scissor') {
+  if (userChoice === 'scissors') {
     if (computerChoice === 'rock') {
       return 'Computer wins';
     } else {
